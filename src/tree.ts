@@ -33,7 +33,7 @@ export class Tree {
           this._childrenLoadingState = ChildrenLoadingState.Completed;
           observer.next(this.children);
           observer.complete();
-        });
+        }, this.tree);
       });
     });
   });
@@ -182,7 +182,7 @@ export class Tree {
       this._loadChildren((children: TreeModel[]) => {
         this._children = children && children.map((child: TreeModel) => new Tree(child, this));
         this._childrenLoadingState = ChildrenLoadingState.Completed;
-      });
+      }, this.tree);
     }
   }
 

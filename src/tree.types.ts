@@ -14,13 +14,13 @@ export class FoldingType {
   }
 }
 
-export type ChildrenLoadingFunction = (callback: (children: TreeModel[]) => void) => void;
+export type ChildrenLoadingFunction = any;
 
 export interface TreeModel {
   value: string | RenamableNode;
   id?: string | number;
   children?: TreeModel[];
-  loadChildren?: any;
+  loadChildren?: ChildrenLoadingFunction;
   settings?: TreeModelSettings;
   emitLoadNextLevel?: boolean;
   _status?: TreeStatus;

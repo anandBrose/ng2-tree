@@ -20,7 +20,7 @@ export interface TreeModel {
   value: string | RenamableNode;
   id?: string | number;
   children?: TreeModel[];
-  loadChildren?: ChildrenLoadingFunction;
+  loadChildren?: any;
   settings?: TreeModelSettings;
   emitLoadNextLevel?: boolean;
   _status?: TreeStatus;
